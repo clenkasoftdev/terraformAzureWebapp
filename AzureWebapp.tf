@@ -18,8 +18,7 @@ resource "azurerm_windows_web_app" "clemic-demo-app" {
   service_plan_id     = azurerm_service_plan.clemic-demorg-applan.id
 
   site_config {
-    dotnet_framework_version = "v4.0"
-    scm_type                 = "LocalGit"
+
   }
 
   app_settings = {
