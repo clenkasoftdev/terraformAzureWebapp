@@ -21,13 +21,4 @@ resource "azurerm_windows_web_app" "clemic-demo-app" {
 
   }
 
-  app_settings = {
-    "KEY1" = "testkey"
-  }
-
-  connection_string {
-    name  = "Database"
-    type  = "SQLServer"
-    value = "Server=some-server.mydomain.com;Integrated Security=SSPI"
-  }
 }
