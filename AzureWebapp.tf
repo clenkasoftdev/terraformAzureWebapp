@@ -21,4 +21,25 @@ resource "azurerm_windows_web_app" "clemic-demo-app" {
 
   }
 
+  app_settings = {
+    "KEY1" = "testkey"
+  }
+
+  connection_string {
+    name  = "Database"
+    type  = "SQLServer"
+    value = "Server=some-server.mydomain.com;Integrated Security=SSPI"
+  }
+}
+
+output "resource_group_name" {
+  value = azurerm_resource_group.clemic-demorg.name
+}
+
+output "service_plan_name" {
+  value = azurerm_service_plan.clemic-demorg-applan.name
+}
+
+output "web_app_name" {
+  value = azurerm_windows_web_app.clemic-demo-app.name
 }
