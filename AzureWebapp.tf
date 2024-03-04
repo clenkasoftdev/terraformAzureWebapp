@@ -18,7 +18,7 @@ resource "azurerm_windows_web_app" "clemic-demo-app" {
   service_plan_id     = azurerm_service_plan.clemic-demorg-applan.id
 
   site_config {
-
+     linux_fx_version = "DOTNETCORE|6.0"
   }
 
 }
